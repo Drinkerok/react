@@ -1,0 +1,433 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 413.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/picom/Desktop/my/react"
+	],
+	"file_history":
+	[
+		"/C/Users/picom/Desktop/react/package.json",
+		"/C/Users/picom/Desktop/projects/partner/public/js/main.js",
+		"/C/Users/picom/Desktop/projects/partner/frontend/js/main.js",
+		"/C/Users/picom/Desktop/projects/partner/frontend/assets/user.json",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/result.less",
+		"/C/Users/picom/Desktop/projects/partner/tasks/js.js",
+		"/C/Users/picom/Desktop/projects/partner/frontend/assets/products.json",
+		"/C/Users/picom/Desktop/projects/partner/public/products.json",
+		"/C/Users/picom/Desktop/projects/partner/public/user.json",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/vars.less",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/hamburger-menu.less",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/logo.less",
+		"/C/Users/picom/Desktop/projects/partner/public/css/styles.css",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/user-info.less",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/main.less",
+		"/C/Users/picom/Desktop/projects/partner/frontend/html/index.html",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/styles.less",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/page-header.less",
+		"/C/Users/picom/Desktop/projects/partner/public/producer.json",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/items.less",
+		"/C/Users/picom/Desktop/projects/partner/frontend/assets/producer.json",
+		"/C/Users/picom/Desktop/projects/partner/frontend/html/producers.html",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/producers.less",
+		"/C/Users/picom/Desktop/projects/partner/public/user-2.json",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/page-footer.less",
+		"/C/Users/picom/Desktop/projects/partner/frontend/less/components/filter.less",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_select-city.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/header.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/form.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/.tmp/shops.json",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/main.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/city.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/filters.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/shops.json",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_another-vacancies.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/subscribe-section_form.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_header.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/.tmp/anketa-vacancy.json",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/anketa-vacancy.json",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/main.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/layouts/default.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/location_select.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/assets/js/loaders.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_index.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/vacancy_page.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/anketa.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/assets/js/carouFredSel.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/dist/scripts/vendor.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/dist/scripts/main.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/work_shop.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_slider.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_success-card.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_shops.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_students.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/employees.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_banner.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_development.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_questionnaire.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_modal.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_photowall.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/map.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/photowall.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/mixins/mixins.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/assets/js/owl/assets/owl.carousel.css",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_sections.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/success_page.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/shop-page.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/shop_page.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/students.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/index.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/section-slider_cards.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_card.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/_typo.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/gulpfile.babel.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_index-vacancies.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_vacancy-success.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_shop-popup.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_social-list.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/dist/styles/main.css",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_subway.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/.tmp/metro.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/vars/_mq_settings.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_index.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_buttons.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_tile.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_checkpoints.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/stories.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_forms.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/about.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_section-students.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/personal-grid.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/assets/js/jquery-ui-touch-punch.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/slide-gallery.pug",
+		"/C/Users/picom/Desktop/picom_site/src/frontend/js/main.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/anketa_success.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_lists.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/subscribe.js",
+		"/C/Users/picom/Desktop/1111.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_profession.scss",
+		"/C/Users/picom/Desktop/shedevr.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/success_list.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/about.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/grid.js",
+		"/C/Users/picom/Desktop/2222.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/work_office.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/footer.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/js/onpagefilter.js",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/.tmp/metro-spb.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/normalizedStations-spb.json",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/metro-spb.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/.tmp/normalizedStations-spb.json",
+		"/C/Users/picom/Desktop/mvideo/stations_moskow.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/metro.html",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/normalizedStations_old.json",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/.tmp/normalizedStations.json",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_my-select.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/assets/css/jquery-ui.css",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_personal-data.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pug/partials/agreement.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_agreement.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_subscribe.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_load.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_animations.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/profession_page.pug",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/components/_isotope.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/scss/blocks/_office.scss",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/src/assets/css/jquery.mCustomScrollbar.min.css",
+		"/C/Users/picom/Desktop/mvideo/mvideo-job/site/pages/work_page.pug"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"this.saveInnerChildren",
+			"console.",
+			"result__row--opening",
+			"--inner",
+			"createInnerRows",
+			"loadProducts",
+			"this.createProductsTr",
+			"createProductsTrs",
+			"console",
+			"\"name\"",
+			"loadProducts",
+			"httpGet",
+			"json",
+			"toFixed",
+			"toFi",
+			"sellingAim",
+			"json",
+			"<td class=\"items__td\">",
+			"--complited",
+			"console",
+			"font-size: 0",
+			"console",
+			"availabilityPercent",
+			"prem",
+			"group",
+			"corporation",
+			"corporationI",
+			"isMain",
+			"premium",
+			"corpor",
+			"descript",
+			"createElementNS",
+			"cloneNo",
+			"PseudoSelect",
+			"filterVacancy",
+			"Сторож2",
+			"Красавчик",
+			"stackBreakPoint",
+			"demm",
+			"priority",
+			"header-dummy",
+			"toggler",
+			"console.l",
+			"over",
+			"city-select",
+			"console.",
+			"li.another-vacancies__item",
+			"intermediate",
+			"another-vacancies",
+			"getMySelectAjax",
+			"this.disableSelec",
+			"this.getMySelectByName",
+			"removeSelectedShop",
+			".sort",
+			"getMySelectAjax",
+			"mySelects",
+			"select.dependent",
+			"disableSelect",
+			"getMySelectAjax",
+			"this.selectFields",
+			"if ( iOS && iOS11 ) {",
+			"body.addClass('iosBugFixed');",
+			"d.removeClass('_state@fixed');",
+			"d.addClass('_state@fixed');",
+			"Выберите професиию",
+			"shops__name-wrapper",
+			"this.value",
+			"shops__form-select-value",
+			"PseudoSelect",
+			"z-ind",
+			"angular",
+			"translate3d",
+			"backface",
+			"people-card",
+			"window_width",
+			"//p.",
+			"drawMap.init",
+			"shops__map",
+			"drawMap.init",
+			"mvideo-job2.picom.su/site/resu",
+			"photowall",
+			"deg",
+			"skew",
+			"resizeItems",
+			"personal-grid",
+			"esc",
+			"this.details",
+			"onItemClick",
+			"this.stopAnimation",
+			"void(",
+			"this.startAnimation",
+			"__gallery",
+			"this.containerNormalWidth",
+			"resetPosition",
+			"photoWall(wall)",
+			"this.textBlock",
+			"this.details",
+			"setItems",
+			"onMySelectClick",
+			"conso",
+			"itemsMoveTimeout",
+			"onContainerHover",
+			"itemsMoveTimeout",
+			"skew",
+			"moveToMouse",
+			"alert('Данных нет');",
+			"[]",
+			"this.createShops",
+			"this.selectFields",
+			"json",
+			"drawMap.setLinkBaloon",
+			"if (!drawMap.ready) return;",
+			"drawMap.unselectShop(_i6",
+			"drawMap.unselectShop(_i6);",
+			"_this.map.selectShop(_this.getShopNumberInArray(shop), shop);",
+			"drawMap.unselectShop",
+			"drawMap.selectShop",
+			"__description",
+			"figcaption.card-story__title.",
+			"pageTitle",
+			"img",
+			"block",
+			"stackBreakPoint",
+			"some",
+			"quote-yel",
+			".quote-yel",
+			"__title",
+			"metro"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"nanos",
+				"mvideo-job\\site\\src\\scss\\vendors\\_nanoscroller.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 320.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

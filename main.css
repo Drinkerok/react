@@ -1,0 +1,22 @@
+section{
+    font-size: 14px;
+}
+.commentAuthor,
+.commentText{
+    margin-bottom: 5px;
+}
+.commentText{
+    margin-left: 35px;
+}
+.commentAuthor,
+.commentText{
+    font-style: italic;
+}
+.toggleComents{
+    border: 1px solid gray;
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 7px;
+    border-radius: 45%;
+    margin-top: 8px;
+}
