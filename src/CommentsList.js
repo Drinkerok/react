@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import Comment from './Comment';
 
 export default function CommentsList({comments}) {
-  if (!comments) {
+  if (!comments || !comments.length) {
     return (
       <div>Нет комментариев</div>
     )
