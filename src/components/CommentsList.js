@@ -37,7 +37,9 @@ function getBody({isOpen, comments = []}) {
 
 
 CommentsList.proptypes = {
-  comments: PropTypes.array
+  comments: PropTypes.array,
+  // from toggleOpen decorator
+  isOpen: PropTypes.bool
 }
 
 

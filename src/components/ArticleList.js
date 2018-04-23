@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import accordion from '../decorators/accordion';
 
 function ArticleList(props) {
-  const {articles, openChildId, toggleChild} = props;
+  const {articles, isChildOpened, toggleChild} = props;
+
   const elements = articles.map(article =>
     <li key={article.id}>
       <Article article={article}
-               isOpen = {article.id == openChildId}
-               toggleOpen = {toggleChild(article.id)}
+               toggleOpen={toggleChild(article.id)}
+               isOpen={isChildOpened(article.id)}
       />
     </li>
   );
@@ -24,7 +25,10 @@ function ArticleList(props) {
 
 
 ArticleList.proptypes = {
-  articles: PropTypes.array.isRequired
+  articles: PropTypes.array.isRequired,
+  // from accordion decorator
+  toggleChild: PropTypes.func.isRequired,
+  isChildOpened: PropTypes.func.isRequired
 }
 
 

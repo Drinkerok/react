@@ -10,12 +10,15 @@ export default (OriginalComponent) => class Accordion extends Component {
       openChildId: this.state.openChildId == id ? null : id
     })
   }
+  isChildOpened = (id) => {
+    return id === this.state.openChildId
+  }
 
   render() {
     return <OriginalComponent
               {...this.props}
-              openChildId={this.state.openChildId}
               toggleChild={this.toggleChild}
+              isChildOpened={this.isChildOpened}
            />
   }
 }
