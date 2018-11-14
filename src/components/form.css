@@ -1,0 +1,56 @@
+.form {
+  width: 400px;
+  border: 1px solid #000;
+  margin: 10px 0;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+
+
+.form__header {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+.form__input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+
+
+.form__label {
+  flex-shrink: 0;
+  margin: 0 10px 0 0;
+}
+
+
+
+.form__input {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+
+
+.form__input:focus {
+  outline: none;
+}
+
+
+
+.form__input--error {
+  border-color: #f00;
+}
+
+
+
+.form__input--textarea {
+  resize: none;
+  height: 3.45em;
+}
