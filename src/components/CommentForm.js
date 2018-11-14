@@ -29,47 +29,44 @@ class CommentForm extends Component {
         <div className="form__input-wrapper">
           <label className="form__label">Имя</label>
           <input
-            className = "form__input"
-            placeholder = {`От ${InputSize.NAME.min} до ${InputSize.NAME.max} символов`}
+            className = { `form__input ${this.getInputErrorClassName(`name`)}` }
+            placeholder = { this.getInputPlaceholder(`name`) }
             name="name"
             value = {this.state.name}
-            onInput = { this.handlerInputName } />
+            onInput = { this.setInputValue(`name`) } />
         </div>
         <div className="form__input-wrapper">
           <label className="form__label">Комментарий</label>
           <textarea
-            className = "form__input form__input--textarea"
-            placeholder = {`От ${InputSize.COMMENT.min} до ${InputSize.COMMENT.max} символов`}
+            className = { `form__input form__input--textarea ${this.getInputErrorClassName(`comment`)}` }
+            placeholder = { this.getInputPlaceholder(`comment`) }
             name = "comment"
             value = {this.state.comment}
-            onInput = { this.handlerInputComment } />
+            onInput = { this.setInputValue(`comment`) } />
         </div>
       </form>
     )
   }
 
+  getInputErrorClassName = (type) => {
+    const inputRange = InputSize[type.toUpperCase()];
+    const valueLength = this.state[type].length
 
-  handlerInputName = (evt) => {
-    this.setState({
-      name: evt.target.value
-    });
-
-    if (this.state.name.length < InputSize.NAME.min || this.state.name.length > InputSize.NAME.max) {
-      evt.target.classList.add('form__input--error')
-    } else {
-      evt.target.classList.remove ('form__input--error')
-    }
+    return (valueLength !== 0 && (valueLength < inputRange.min || valueLength > inputRange.max))
+            ? `form__input--error`
+            : ``;
   }
-  handlerInputComment = (evt) => {
-    this.setState({
-      comment: evt.target.value
-    })
 
-    if (this.state.comment.length < InputSize.COMMENT.min || this.state.comment.length > InputSize.COMMENT.max) {
-      evt.target.classList.add('form__input--error')
-    } else {
-      evt.target.classList.remove ('form__input--error')
-    }
+  getInputPlaceholder = (type) => {
+    const inputRange = InputSize[type.toUpperCase()];
+
+    return `От ${inputRange.min} до ${inputRange.max} символов`;
+  }
+
+  setInputValue = (type) => (evt) => {
+    this.setState({
+      [type]: evt.target.value
+    })
   }
 }
 
