@@ -1,0 +1,4 @@
+export const Actions = {
+  CHANGE_DATE_RANGE: `CHANGE_DATE_RANGE`,
+  DELETE_ARTICLE: `DELETE_ARTICLE`,
+}

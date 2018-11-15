@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
-import './calendar.css';
+import './styles.css';
+import {connect} from 'react-redux';
+import {changeDate} from './../../AC';
 
 class Calendar extends Component {
+  static propTypes = {
+    // from connect
+    changeDate: PropTypes.func.isRequired
+  }
+
+
   constructor(props) {
     super(props);
     this.state = this.getInitialState();
@@ -18,11 +27,12 @@ class Calendar extends Component {
 
   handleDayClick(day) {
     const range = DateUtils.addDayToRange(day, this.state);
-    this.props.selectDate(range);
     this.setState(range);
+    this.props.changeDate(range);
   }
   handleResetClick() {
     this.setState(this.getInitialState());
+    this.props.changeDate(this.getInitialState());
   }
 
 
@@ -60,4 +70,4 @@ class Calendar extends Component {
 
 
 
-export default Calendar;
+export default connect(null, { changeDate } )(Calendar);

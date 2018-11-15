@@ -1,35 +1,20 @@
 import React, {Component} from 'react';
 import Calendar from './Calendar';
-import ArticleList from './ArticleList';
-import {articles} from './../fixtures';
+import Articles from './Articles';
+import store from './../store';
+import {Provider} from 'react-redux';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      date: {
-        from: null,
-        to: null
-      }
-    }
-  }
 
   render() {
     return (
-      <div>
-        <Calendar selectDate = {this.setDateRange} />
-        <ArticleList articles = {articles} dateRange = {this.state.date} />
-      </div>
+      <Provider store = {store} >
+        <div>
+          <Calendar />
+          <Articles />
+        </div>
+      </Provider>
     )
-  }
-
-  setDateRange = ({from, to}) => {
-    this.setState({
-      date: {
-        from,
-        to
-      }
-    })
   }
 }
 

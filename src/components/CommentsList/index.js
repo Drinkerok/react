@@ -1,8 +1,9 @@
 import React from 'react';
-import CommentForm from './CommentForm';
-import Comment from './Comment';
+import CommentForm from './../CommentForm';
+import Comment from './../Comment';
 import PropTypes from 'prop-types';
-import toggleOpen from '../decorators/toggleOpen';
+import toggleOpen from './../../decorators/toggleOpen';
+import './styles.css';
 
 function CommentsList(props) {
   const {isOpen, toggleOpen} = props;
