@@ -14,9 +14,9 @@ export function changeDate(range) {
   }
 }
 
-export function filterArticles(filters) {
+export function addComment(data) {
   return {
-    type: Actions.FILTER_ARTICLES,
-    payload: { filters }
+    type: Actions.ADD_COMMENT,
+    payload: { data }
   }
 }

@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux';
-import articlesReducer from './articles';
-import filtersReducer from './filters';
+import articles from './articles';
+import filters from './filters';
+import comments from './comments';
 
 
 export default combineReducers({
-  articles: articlesReducer,
-  filters: filtersReducer
+  articles,
+  comments,
+  filters,
 });

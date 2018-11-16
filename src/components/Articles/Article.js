@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import CommentsList from './../CommentsList';
+import CommentsList from './../Comments/CommentsList';
 import {connect} from 'react-redux';
 import {deleteArticle} from './../../AC';
 
@@ -36,7 +36,7 @@ class Article extends Component {
     return isOpen && (
       <div>
         <div>{article.text}</div>
-        <CommentsList comments={article.comments}></CommentsList>
+        <CommentsList comments = {article.comments} articleId = {article.id} ></CommentsList>
       </div>
     )
   }

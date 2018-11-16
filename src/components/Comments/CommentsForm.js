@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import './styles.css';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {addComment} from './../../AC';
 
 const InputSize = {
   NAME: {
@@ -14,6 +16,10 @@ const InputSize = {
 
 
 class CommentForm extends Component {
+  static propTypes ={
+    articleId: PropTypes.string.isRequired,
+  }
+
   constructor() {
     super();
     this.state = {
@@ -44,18 +50,29 @@ class CommentForm extends Component {
             value = {this.state.comment}
             onInput = { this.setInputValue(`comment`) } />
         </div>
+        <div className="form__input-wrapper">
+          <button
+            className = {"form__submit"}
+            disabled = {this.isSubmitDisabled()}
+            onClick = {this.handleSubmit}
+          >Отправить</button>
+        </div>
       </form>
     )
   }
 
-  getInputErrorClassName = (type) => {
-    const inputRange = InputSize[type.toUpperCase()];
-    const valueLength = this.state[type].length
-
-    return (valueLength !== 0 && (valueLength < inputRange.min || valueLength > inputRange.max))
-            ? `form__input--error`
-            : ``;
+  isSubmitDisabled = () => {
+    return !(this.isInputValueCorrect(`name`) && this.isInputValueCorrect(`comment`));
   }
+
+  isInputValueCorrect = (type) => {
+    const inputRange = InputSize[type.toUpperCase()];
+    const valueLength = this.state[type].length;
+
+    return (valueLength !== 0 && valueLength >= inputRange.min && valueLength <= inputRange.max);
+  }
+
+  getInputErrorClassName = (type) => this.isInputValueCorrect(type) ? `` : `form__input--error`;
 
   getInputPlaceholder = (type) => {
     const inputRange = InputSize[type.toUpperCase()];
@@ -68,8 +85,19 @@ class CommentForm extends Component {
       [type]: evt.target.value
     })
   }
+
+
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    this.props.addComment({
+      articleId: this.props.articleId,
+      name: this.state.name,
+      comment: this.state.comment,
+    });
+  }
 }
 
 
 
-export default CommentForm;
+export default connect(null, {addComment})(CommentForm);
