@@ -9,23 +9,23 @@ import {filteredArticlesSelector} from './../../selectors';
 function ArticleList(props) {
   const {articles, isChildOpened, toggleChild} = props;
 
-  const elements = Object.keys(articles).map((id) =>
-    <li key={id} className="articles__item">
-      <Article article = {articles[id]}
-               toggleOpen = {toggleChild(id)}
-               isOpen = {isChildOpened(id)}
-      />
-    </li>
-  );
-
-  // const elements = articles.map((article) =>
-  //   <li key={article.id} className="articles__item">
-  //     <Article article = {article}
-  //              toggleOpen = {toggleChild(article.id)}
-  //              isOpen = {isChildOpened(article.id)}
+  // const elements = Object.keys(articles).map((id) =>
+  //   <li key={id} className="articles__item">
+  //     <Article article = {articles[id]}
+  //              toggleOpen = {toggleChild(id)}
+  //              isOpen = {isChildOpened(id)}
   //     />
   //   </li>
   // );
+
+  const elements = articles.map((article) =>
+    <li key={article.id} className="articles__item">
+      <Article article = {article}
+               toggleOpen = {toggleChild(article.id)}
+               isOpen = {isChildOpened(article.id)}
+      />
+    </li>
+  );
 
   return (
     <ul className="articles__list">

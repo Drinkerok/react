@@ -1,4 +1,5 @@
 import {createSelector} from 'reselect';
+import {mapToArray} from './../utils';
 
 const filtersGetter = (state) => state.filters;
 const articlesGetter = (state) => state.articles;
@@ -9,37 +10,17 @@ const idGetter = (state, props) => props.id;
 
 export const filteredArticlesSelector = createSelector(articlesGetter, filtersGetter, (articles, filters) => {
   const {date: {from, to}} = filters;
-  const filteredArticles = {};
 
-
-  for (let articleId in articles) {
-    const article = articles[articleId];
-
-    if (!from) {
-      filteredArticles[articleId] = article;
-      continue;
-    }
-
+  return mapToArray(articles).filter((article) => {
+    if (!from) return true;
     const articleDate = Date.parse(article.date);
 
-    if (articleDate < Date.parse(from)) continue;
-    if (!!to && (articleDate > Date.parse(to))) continue;
-    
-    filteredArticles[articleId] = article;
-  }
-
-  return filteredArticles;
-
-  // return articles.filter((article) => {
-  //   if (!from) return true;
-  //   const articleDate = Date.parse(article.date);
-
-  //   if (!to) {
-  //     return articleDate >= Date.parse(from);
-  //   } else {
-  //     return (articleDate >= Date.parse(from)) && (articleDate <= Date.parse(to));
-  //   }
-  // });
+    if (!to) {
+      return articleDate >= Date.parse(from);
+    } else {
+      return (articleDate >= Date.parse(from)) && (articleDate <= Date.parse(to));
+    }
+  });
 });
 
 

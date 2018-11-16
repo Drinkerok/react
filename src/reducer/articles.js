@@ -1,28 +1,28 @@
 import {normalizedArticles as articlesDefault} from './../fixtures.js';
 import {Actions} from './../components/constants.js';
+import {arrayToMap} from './../utils';
 
 
-const articlesMap = articlesDefault.reduce((acc, article) => {
-  acc[article.id] = article;
-  return acc;
-}, {});
-
-
-export default (articlesState = articlesMap, action) => {
-  const {type, payload} = action;
+export default (articlesState = arrayToMap(articlesDefault), action) => {
+  const {type, payload, randomId} = action;
 
   switch (type) {
     case Actions.DELETE_ARTICLE:
-      const articlesWithoutDeleted = Object.assign({}, articlesState);
-      delete articlesWithoutDeleted[payload.id];
-      return articlesWithoutDeleted;
-      // return articlesState.filter((article) => article.id !== payload.id);
+      const articlesTmp = {...articlesState};
+      delete articlesTmp[payload.id];
+      return articlesTmp;
 
     case Actions.ADD_COMMENT:
-      const {articleId, id} = payload.data;
-      const newArticles = Object.assign({}, articlesState);
-      newArticles[articleId].comments.push(id);
-      return newArticles;
+      const {articleId} = payload;
+      const article = articlesState[articleId];
+
+      return {
+        ...articlesState,
+        [articleId]: {
+          ...article,
+          comments: (article.comments || []).concat(randomId)
+        }
+      }
   }
 
   return articlesState;

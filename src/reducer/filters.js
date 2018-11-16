@@ -13,7 +13,7 @@ export default (filters = DEFAULT_FILTERS, action) => {
 
   switch (type) {
     case Actions.CHANGE_DATE_RANGE:
-      return {...filters, date: payload.range};
+      return {...filters, date: payload};
   }
 
   return filters;

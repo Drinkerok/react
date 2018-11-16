@@ -1,22 +1,17 @@
 import {normalizedComments as commentsDefault} from './../fixtures.js';
 import {Actions} from './../components/constants.js';
+import {arrayToMap} from './../utils';
 
 
-const commentsMap = commentsDefault.reduce((acc, comment) => {
-  acc[comment.id] = comment;
-  return acc;
-}, {});
-
-
-export default (commentsState = commentsMap, action) => {
-  const {type, payload} = action;
+export default (commentsState = arrayToMap(commentsDefault), action) => {
+  const {type, payload, randomId} = action;
 
   switch (type) {
     case Actions.ADD_COMMENT:
-      const {id, comment, name} = payload.data;
+      const {comment, name} = payload;
       return Object.assign({}, commentsState, {
-        [id]: {
-          id,
+        [randomId]: {
+          id: randomId,
           user: name,
           text: comment
         }

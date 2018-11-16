@@ -10,13 +10,14 @@ export function deleteArticle(id) {
 export function changeDate(range) {
   return {
     type: Actions.CHANGE_DATE_RANGE,
-    payload: { range }
+    payload: range
   }
 }
 
 export function addComment(data) {
   return {
     type: Actions.ADD_COMMENT,
-    payload: { data }
+    payload: data,
+    generateId: true,
   }
 }
