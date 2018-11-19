@@ -1,51 +1,65 @@
-import React from 'react';
+import React, {Component} from 'react';
 import CommentForm from './CommentsForm';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import toggleOpen from './../../decorators/toggleOpen';
+import {loadComments} from './../../AC';
+import Loader from './../Loader';
+import {connect} from 'react-redux';
 import './styles.css';
 
-function CommentsList(props) {
-  const {isOpen, toggleOpen, articleId} = props;
 
-  return (
-    <div className="comments">
-      <CommentForm articleId = {articleId} />
-      <button className="comments__toggle" onClick={toggleOpen}>
-        {isOpen ? "Закрыть комментарии" : "Открыть комментарии"}
-      </button>
-      {getBody(props)}
-    </div>
-  )
+class CommentsList extends Component {
+  static proptypes = {
+    article: PropTypes.object.isRequired,
+    // from toggleOpen decorator
+    isOpen: PropTypes.bool,
+    // from connect
+    loadComments: PropTypes.func.isRequired,
+  }
+
+  componentWillReceiveProps({isOpen, loadComments, article}) {
+    if (!this.props.isOpen && isOpen && !article.commentsLoading && !article.commentsLoaded) {
+      loadComments(article.id);
+    }
+  }
+
+
+  render() {
+    const {isOpen, toggleOpen, article} = this.props;
+
+    return (
+      <div className="comments">
+        <CommentForm articleId = {article.id} />
+        <button className="comments__toggle" onClick={toggleOpen}>
+          {isOpen ? "Закрыть комментарии" : "Открыть комментарии"}
+        </button>
+        {getBody({isOpen, article})}
+      </div>
+    );
+  }
 }
 
-function getBody({isOpen, comments = []}) {
+function getBody({isOpen, article: {comments = [], id, commentsLoaded, commentsLoading}}) {
   if (!isOpen) return null;
 
-  if (!comments || !comments.length) {
+  if (commentsLoading) return <Loader />;
+  if (!commentsLoaded) return null;
+
+
+  if (!comments.length) {
     return (
       <div>Нет комментариев</div>
     )
   }
 
-  const elements = comments.map(id => <li key = {id}><Comment id = {id} /></li>);
-
   return (
     <ul>
-      {elements}
+      {comments.map(id => <li key = {id}><Comment id = {id} /></li>)}
     </ul>
   )
 }
 
 
 
-CommentsList.proptypes = {
-  comments: PropTypes.array,
-  articleId: PropTypes.string.isRequired,
-  // from toggleOpen decorator
-  isOpen: PropTypes.bool
-}
-
-
-
-export default toggleOpen(CommentsList);
+export default connect(null, { loadComments })(toggleOpen(CommentsList));

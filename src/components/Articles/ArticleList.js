@@ -5,49 +5,56 @@ import accordion from './../../decorators/accordion';
 import './styles.css';
 import {connect} from 'react-redux';
 import {filteredArticlesSelector} from './../../selectors';
+import {loadAllArticles} from './../../AC';
+import Loader from './../Loader';
 
-function ArticleList(props) {
-  const {articles, isChildOpened, toggleChild} = props;
+class ArticleList extends Component {
+  static proptypes = {
+    // from connect
+    articles: PropTypes.array.isRequired,
+    // from accordion decorator
+    toggleChild: PropTypes.func.isRequired,
+    isChildOpened: PropTypes.func.isRequired
+  }
 
-  // const elements = Object.keys(articles).map((id) =>
-  //   <li key={id} className="articles__item">
-  //     <Article article = {articles[id]}
-  //              toggleOpen = {toggleChild(id)}
-  //              isOpen = {isChildOpened(id)}
-  //     />
-  //   </li>
-  // );
+  componentDidMount() {
+    const {isLoading, isLoaded, loadAllArticles} = this.props;
+    if (!isLoaded || !isLoading) loadAllArticles();
+  }
 
-  const elements = articles.map((article) =>
-    <li key={article.id} className="articles__item">
-      <Article article = {article}
-               toggleOpen = {toggleChild(article.id)}
-               isOpen = {isChildOpened(article.id)}
-      />
-    </li>
-  );
 
-  return (
-    <ul className="articles__list">
-      {elements}
-    </ul>
-  )
+  render() {
+    const {articles, isChildOpened, toggleChild, isLoading} = this.props;
+
+    if (isLoading) return (<Loader />)
+
+    const elements = articles.map((article) =>
+      <li key={article.id} className="articles__item">
+        <Article article = {article}
+                 toggleOpen = {toggleChild(article.id)}
+                 isOpen = {isChildOpened(article.id)}
+        />
+      </li>
+    );
+
+     return (
+      <ul className="articles__list">
+        {elements}
+      </ul>
+    );
+  }
 }
 
 
 
-ArticleList.proptypes = {
-  // from connect
-  articles: PropTypes.array.isRequired,
-  // from accordion decorator
-  toggleChild: PropTypes.func.isRequired,
-  isChildOpened: PropTypes.func.isRequired
-}
+
 
 
 
 export default connect((state) => {
   return {
-    articles: filteredArticlesSelector(state)
+    articles: filteredArticlesSelector(state),
+    isLoading: state.articles.loading,
+    isLoaded: state.articles.loaded,
   }
-})(accordion(ArticleList));
+}, {loadAllArticles})(accordion(ArticleList));

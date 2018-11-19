@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import CommentsList from './../Comments/CommentsList';
 import {connect} from 'react-redux';
-import {deleteArticle} from './../../AC';
+import {deleteArticle, loadArticle} from './../../AC';
+import Loader from './../Loader';
 
 
 class Article extends Component {
@@ -12,9 +13,15 @@ class Article extends Component {
       text: PropTypes.string,
       comments: PropTypes.array
     }).isRequired,
+    isOpen: PropTypes.bool,
     toggleOpen: PropTypes.func.isRequired,
     // from connect
-    // deleteArticle: PropTypes.funct.isRequired
+    deleteArticle: PropTypes.func.isRequired,
+    loadArticle: PropTypes.func.isRequired
+  }
+
+  componentWillReceiveProps({isOpen, loadArticle, article}) {
+    if (!this.props.isOpen && isOpen && !article.text && !article.loading) loadArticle(article.id);
   }
 
 
@@ -33,10 +40,12 @@ class Article extends Component {
   getBody = () => {
     const {article, isOpen} = this.props;
 
+    if (article.loading) return <Loader />
+
     return isOpen && (
       <div>
         <div>{article.text}</div>
-        <CommentsList comments = {article.comments} articleId = {article.id} ></CommentsList>
+        <CommentsList article = {article} ></CommentsList>
       </div>
     )
   }
@@ -48,4 +57,4 @@ class Article extends Component {
 }
 
 
-export default connect(null, { deleteArticle })(Article);
+export default connect(null, { deleteArticle, loadArticle })(Article);

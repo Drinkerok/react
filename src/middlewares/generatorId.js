@@ -1,7 +1,7 @@
 import {Actions} from './../components/constants';
 
 export default (state) => (next) => (action) => {
-  if (!action.generateId) next(action);
+  if (action.generateId !== true)  return next(action);
 
   next({
     ...action,
