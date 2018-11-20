@@ -1,11 +1,13 @@
 import {normalizedComments as commentsDefault} from './../fixtures.js';
 import {Actions, Status} from './../components/constants.js';
 import {arrayToMap} from './../utils';
-import {OrderedMap, Record} from 'immutable';
+import {Map, OrderedMap, Record} from 'immutable';
 
 
 const StateRecord = Record({
-  entities: new OrderedMap({})
+  entities: new OrderedMap({}),
+  pagination: new Map({}),
+  total: null,
 })
 
 const CommentRecord = Record({
@@ -29,6 +31,16 @@ export default (commentsState = new StateRecord(), action) => {
 
     case Actions.LOAD_COMMENTS + Status.SUCCESS:
       return commentsState.update('entities', (entities) => entities.merge(arrayToMap(data, CommentRecord)));
+
+    case Actions.LOAD_COMMENTS_FOR_PAGE + Status.START:
+      return commentsState.setIn(['pagination', payload.page, 'loading'], true);
+
+    case Actions.LOAD_COMMENTS_FOR_PAGE + Status.SUCCESS:
+      return commentsState
+        .set('total', data.total)
+        .mergeIn(['entities'], arrayToMap(data.records, CommentRecord))
+        .setIn(['pagination', payload.page, 'ids'], data.records.map((comment) => comment.id))
+        .setIn(['pagination', payload.page, 'loading'], false)
   }
 
   return commentsState;

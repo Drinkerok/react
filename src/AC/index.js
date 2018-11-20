@@ -30,6 +30,7 @@ export function loadAllArticles() {
 }
 
 export function loadArticle(id) {
+  console.log('______________load article');
   return (dispatch) => {
     dispatch({
       type: Actions.LOAD_ARTICLE + Status.START,
@@ -39,6 +40,11 @@ export function loadArticle(id) {
     setTimeout(() => {
       fetch(`${API.ARTICLE}${id}`)
         .then((response) => response.json())
+        .then((data) => {
+
+          console.log('______________loaded article');
+          return data;
+        })
         .then((data) => dispatch({
           type: Actions.LOAD_ARTICLE + Status.SUCCESS,
           payload: { id, data }
@@ -56,5 +62,18 @@ export function loadComments(articleId) {
     type: Actions.LOAD_COMMENTS,
     payload: {articleId},
     callAPI: `/api/comment?article=${articleId}`,
+  }
+}
+
+export function checkAndLoadCommentsForPage(page) {
+  return (dispatch, getState) => {
+    const {comments: {pagination}} = getState();
+    if (pagination.getIn([page, 'loading']) || pagination.getIn([page, 'ids'])) return;
+
+    dispatch({
+      type: Actions.LOAD_COMMENTS_FOR_PAGE,
+      payload: { page },
+      callAPI: `/api/comment?limit=5&offset=${(page - 1) * 5}`
+    });
   }
 }

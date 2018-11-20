@@ -8,25 +8,29 @@ import Loader from './../Loader';
 
 class Article extends Component {
   static propTypes = {
+    id: PropTypes.string.isRequired,
+    // from connect
     article: PropTypes.shape({
-      title: PropTypes.string.isRequired,
+      title: PropTypes.string,
       text: PropTypes.string,
       comments: PropTypes.array
-    }).isRequired,
-    isOpen: PropTypes.bool,
-    toggleOpen: PropTypes.func.isRequired,
-    // from connect
+    }),
     deleteArticle: PropTypes.func.isRequired,
     loadArticle: PropTypes.func.isRequired
   }
 
-  componentWillReceiveProps({isOpen, loadArticle, article}) {
-    if (!this.props.isOpen && isOpen && !article.text && !article.loading) loadArticle(article.id);
+
+
+  componentDidMount() {
+    const {loadArticle, article, id} = this.props
+    if (!article || (!article.text && !article.loading)) loadArticle(id);
   }
 
 
   render() {
     const {article, toggleOpen} = this.props;
+
+    if (!article) return null;
 
     return (
       <div>
@@ -38,11 +42,11 @@ class Article extends Component {
   }
 
   getBody = () => {
-    const {article, isOpen} = this.props;
-
+    const {article} = this.props;
+    if (!article.id) return null;
     if (article.loading) return <Loader />
 
-    return isOpen && (
+    return (
       <div>
         <div>{article.text}</div>
         <CommentsList article = {article} ></CommentsList>
@@ -57,4 +61,6 @@ class Article extends Component {
 }
 
 
-export default connect(null, { deleteArticle, loadArticle })(Article);
+export default connect((state, ownProps) => ({
+  article: state.articles.entities.get(ownProps.id)
+}), { deleteArticle, loadArticle })(Article);

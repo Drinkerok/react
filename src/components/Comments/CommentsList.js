@@ -6,7 +6,6 @@ import toggleOpen from './../../decorators/toggleOpen';
 import {loadComments} from './../../AC';
 import Loader from './../Loader';
 import {connect} from 'react-redux';
-import './styles.css';
 
 
 class CommentsList extends Component {
